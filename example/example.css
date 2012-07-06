@@ -1,0 +1,40 @@
+body {
+  margin: 60px;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  position: relative;
+  background-color: #cccccc;
+  border: 2px solid #000000;
+}
+.box:after,
+.box:before {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.box:after {
+  border-width: 20px;
+}
+.box:before {
+  border-width: 23px;
+}
+.box:after,
+.box:before {
+  right: 100%;
+}
+.box:after {
+  border-right-color: #cccccc;
+  top: 50%;
+  margin-top: -20px;
+}
+.box:before {
+  border-right-color: #000000;
+  top: 50%;
+  margin-top: -23px;
+}

@@ -1,0 +1,89 @@
+.arrowed(@position, @size, @color, @borderWidth, @borderColor) {
+
+	position: relative;
+	background-color: @color;
+	border: @borderWidth solid @borderColor;
+
+	&:after, &:before {
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-width: @size;
+	}
+	&:before {
+		border-width: @size + round(@borderWidth * 1.41421356);
+	}
+}
+
+.arrowed(top, @size, @color, @borderWidth, @borderColor) {
+	
+	&:after, &:before {
+		bottom: 100%;
+	}
+	&:after {
+		border-bottom-color: @color;
+		left: 50%; 
+		margin-left: -1 * @size; 
+	}
+	&:before {
+		border-bottom-color: @borderColor;
+		left: 50%;
+		margin-left: -1 * (@size + round(@borderWidth * 1.41421356));
+	}
+}
+
+.arrowed(right, @size, @color, @borderWidth, @borderColor) {
+	
+	&:after, &:before {
+		left: 100%;
+	}
+	&:after {
+		border-left-color: @color; 
+		top: 50%;
+		margin-top: -1 * @size; 
+	}
+	&:before {
+		border-left-color: @borderColor;
+		top: 50%;
+		margin-top: -1 * (@size + round(@borderWidth * 1.41421356));
+	}
+}
+
+.arrowed(bottom, @size, @color, @borderWidth, @borderColor) {
+	
+	&:after, &:before {
+		top: 100%; 
+	}
+	&:after {
+		border-top-color: @color; 
+		left: 50%; 
+		margin-left: -1 * @size; 
+	}
+	&:before {
+		border-top-color: @borderColor;
+		left: 50%;
+		margin-left: -1 * (@size + round(@borderWidth * 1.41421356));
+	}
+}
+
+.arrowed(left, @size, @color, @borderWidth, @borderColor) {
+	
+	&:after, &:before {
+		right: 100%; 
+	}
+	&:after {
+		border-right-color: @color; 
+		top: 50%; 
+		margin-top: -1 * @size; 
+	}
+	&:before {
+		border-right-color: @borderColor;
+		top: 50%;
+		margin-top: -1 * (@size + round(@borderWidth * 1.41421356));
+	}
+}
